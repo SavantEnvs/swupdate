@@ -1,0 +1,10 @@
+project: savantenvs/swupdate
+target: fuzz_copyfile
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_copyfile/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_copyfile
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_copyfile/fuzz_copyfile.dict
+    timeout: 20

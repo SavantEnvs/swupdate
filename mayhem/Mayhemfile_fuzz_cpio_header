@@ -1,0 +1,10 @@
+project: savantenvs/swupdate
+target: fuzz_cpio_header
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_cpio_header/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_cpio_header
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_cpio_header/fuzz_cpio_header.dict
+    timeout: 20

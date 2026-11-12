@@ -1,0 +1,10 @@
+project: savantenvs/swupdate
+target: fuzz_swd_libconfig
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_swd_libconfig/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_swd_libconfig
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_swd_libconfig/fuzz_swd_libconfig.dict
+    timeout: 20

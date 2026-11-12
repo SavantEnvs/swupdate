@@ -1,0 +1,10 @@
+project: savantenvs/swupdate
+target: fuzz_semver
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_semver/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_semver
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_semver/fuzz_semver.dict
+    timeout: 20

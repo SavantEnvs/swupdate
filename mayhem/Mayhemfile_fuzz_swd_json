@@ -1,0 +1,10 @@
+project: savantenvs/swupdate
+target: fuzz_swd_json
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_swd_json/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_swd_json
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_swd_json/fuzz_swd_json.dict
+    timeout: 20
